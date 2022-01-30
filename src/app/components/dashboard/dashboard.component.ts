@@ -1,18 +1,18 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { Title } from 'src/app/shared/service/models/title';
-import { finalize, take } from 'rxjs/operators';
-import { TitleService } from 'src/app/shared/service/title.service';
-import { MatTableDataSource } from '@angular/material/table';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
-import { SelectionModel } from '@angular/cdk/collections';
-import { MatAccordion } from '@angular/material/expansion';
-import { Genre, Participant } from 'src/app/shared/service/models/title-metadata';
+import { Component, OnInit, ViewChild } from "@angular/core";
+import { Title } from "src/app/shared/service/models/title";
+import { finalize, take } from "rxjs/operators";
+import { TitleService } from "src/app/shared/service/title.service";
+import { MatTableDataSource } from "@angular/material/table";
+import { MatPaginator } from "@angular/material/paginator";
+import { MatSort } from "@angular/material/sort";
+import { SelectionModel } from "@angular/cdk/collections";
+import { MatAccordion } from "@angular/material/expansion";
+import { Genre, Participant } from "src/app/shared/service/models/title-metadata";
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  selector: "app-dashboard",
+  templateUrl: "./dashboard.component.html",
+  styleUrls: ["./dashboard.component.scss"]
 })
 export class DashboardComponent implements OnInit {
 
@@ -20,7 +20,7 @@ export class DashboardComponent implements OnInit {
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatAccordion) accordion!: MatAccordion;
   titles = {} as Title[];
-  titleColumns: string[] = ['titleId', 'titleName', 'releaseYear', 'processedDateTimeUTC'];
+  titleColumns: string[] = ["titleId", "titleName", "releaseYear", "processedDateTimeUTC"];
   dataSource!: MatTableDataSource<Title>;
   dateRangeStart: Date = new Date();
   dateRangeEnd: Date = new Date();
@@ -58,7 +58,7 @@ export class DashboardComponent implements OnInit {
   }
 
   public getTitleData(row: Title) {
-    this.selection.select(row)
+    this.selection.select(row);
     this.isTitleDataLoading = true;
     this.titleService.getTitleById(row.titleId).pipe(finalize(() => this.isTitleDataLoading = false), take(1))
       .subscribe(response => {

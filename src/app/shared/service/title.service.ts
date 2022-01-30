@@ -1,10 +1,10 @@
-import { Injectable } from '@angular/core';
-import { Title } from './models/title';
+import { Injectable } from "@angular/core";
+import { Title } from "./models/title";
 import { HttpClient } from "@angular/common/http";
-import { Observable } from 'rxjs';
+import { Observable } from "rxjs";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 
 export class TitleService {
@@ -14,7 +14,7 @@ export class TitleService {
   constructor(private http:HttpClient) { }
 
   getAllTitles():Observable<Title[]> {
-    return this.http.get<any>(this.titleAPIUrl + '/titles');
+    return this.http.get<any>(this.titleAPIUrl + "/titles");
   }
 
   getTitleById(id: number):Observable<Title> {
@@ -22,7 +22,7 @@ export class TitleService {
   }
 
   addTitle(data:any) {
-    return this.http.post(this.titleAPIUrl + '/titles', data);
+    return this.http.post(this.titleAPIUrl + "/titles", data);
   }
 
   updateTitle(id:number|string, data:any) {

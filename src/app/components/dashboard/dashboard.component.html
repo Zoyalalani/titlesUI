@@ -27,7 +27,7 @@
             </ng-container>
 
             <tr mat-header-row *matHeaderRowDef="titleColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: titleColumns;"
+            <tr mat-row *matRowDef="let row; columns: titleColumns;" matTooltip="Click to view details"
                 [ngClass]="{highlighted: selection.isSelected(row)}" (click)="getTitleData(row)"></tr>
 
             <tr class="mat-row" *matNoDataRow>

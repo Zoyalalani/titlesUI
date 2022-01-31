@@ -18,18 +18,18 @@ export class TitleService {
   }
 
   getTitleById(id: number):Observable<Title> {
-    return this.http.get<any>(this.titleAPIUrl + `/Titles/${id}`);
+    return this.http.get<any>(this.titleAPIUrl + `/titles/${id}`);
   }
 
-  addTitle(data:any) {
+  addTitle(data:Title) {
     return this.http.post(this.titleAPIUrl + "/titles", data);
   }
 
-  updateTitle(id:number|string, data:any) {
+  updateTitle(id:number, data:Title) {
     return this.http.put(this.titleAPIUrl + `/titles/${id}`, data);
   }
 
-  deleteTitle(id:number|string) {
+  deleteTitle(id:number) {
     return this.http.delete(this.titleAPIUrl + `/titles/${id}`);
   }
 }

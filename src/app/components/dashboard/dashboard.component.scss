@@ -34,7 +34,7 @@ th.mat-header-cell {
   font-size: 18px;
 }
 
-.mat-accordion .mat-expansion-panel{
+.mat-accordion .mat-expansion-panel {
   margin-bottom: 10px;
 }
 
@@ -65,30 +65,21 @@ th.mat-header-cell {
   height: initial !important;
 }
 
-::ng-deep .mat-list-base .mat-list-item .mat-line
-{
+::ng-deep .mat-list-base .mat-list-item .mat-line {
   font-size: 20px !important;
-  padding: 8px !important
+  padding: 8px !important;
 }
 
-.mat-button
-{
+.mat-button,
+.mat-paginator {
   font-size: 20px;
 }
 
-.mat-paginator
-{
-  font-size: 20px;
-}
-
+::ng-deep .mat-option-text,
+::ng-deep .mat-tooltip,
 ::ng-deep .mat-select-value {
   font-size: 20px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-::ng-deep .mat-option-text {
-  font-size: 20px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .loading-overlay {
@@ -105,7 +96,7 @@ th.mat-header-cell {
 
   /* Transparent Overlay */
   &::before {
-    content: '';
+    content: "";
     display: block;
     position: fixed;
     top: 0;
@@ -116,8 +107,7 @@ th.mat-header-cell {
   }
 }
 
-.mat-list-base .mat-list-item .mat-line
-{
+.mat-list-base .mat-list-item .mat-line {
   padding: 20px !important;
   line-height: 30px;
 }

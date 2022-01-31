@@ -26,7 +26,7 @@ export interface Awards {
     awardWon: string,
     awardYear: number,
     awardCompany: string,
-    _Award: string
+    awardCategory: string
 }
 
 export interface StoryLines {

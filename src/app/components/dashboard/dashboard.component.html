@@ -79,7 +79,7 @@
             </mat-expansion-panel-header>
             <mat-list>
                 <mat-list-item *ngFor="let data of titleData.awards">
-                    <div mat-line> <b>Award: </b> {{data._Award}} </div> <br />
+                    <div mat-line> <b>Award: </b> {{data.awardCategory}} </div> <br />
                     <div mat-line> <b>Award Year:</b> {{data.awardYear}}</div>
                     <div mat-line> <b>Award Company: </b>{{data.awardCompany}} </div>
                     <div mat-line> <b>Award Won: </b> {{data.awardWon?"Yes":"No"}} </div> <br />
